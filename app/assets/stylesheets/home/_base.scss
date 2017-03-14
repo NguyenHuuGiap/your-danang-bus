@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'SFUIText';
+  src: url('/assets/SanFranciscoText-Regular.otf');
+}
+
+body {
+  background-color: $home-sky-color;
+  height: 100%;
+  overflow: hidden;
+}
+
+/** Navigation **/
+
+nav {
+  min-height: 10px;
+
+  .li-item {
+    float: right;
+    text-transform: uppercase;
+    list-style-type: none;
+  }
+
+  .nav-item {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: SFUIText, serif;
+    text-decoration: none;
+    margin: 10px 30px;
+
+    &:hover {
+      color: whitesmoke;
+      font-size: 22px;
+    }
+  }
+}
+
+/* Footer */
+
+footer {
+  padding: 10px;
+  width: 100%;
+  color: $home-sky-color;
+  position: absolute;
+  bottom: 0;
+  a {
+    font-family: SFUIText, serif;
+    color: white;
+    font-size: 13px;
+    &:hover {
+      color: papayawhip;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    margin: auto 30px;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}

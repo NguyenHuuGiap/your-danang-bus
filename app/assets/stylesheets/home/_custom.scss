@@ -1,0 +1,283 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Road */
+
+#road {
+  width: 100%;
+  height: 150px;
+  background-color: $home-road-color;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 10px $home-road-sub-color solid;
+
+  ul {
+    width: 2000%;
+    list-style: none;
+  }
+
+  li {
+    width: 70px;
+    height: 10px;
+    background-color: #5f555e;
+    float: left;
+    margin-top: 55px;
+    margin-right: 63px;
+    overflow: hidden;
+  }
+
+}
+
+#castleContainer {
+  width: 100%;
+  height: 400px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 160px;
+}
+
+#grass {
+  border-bottom: 50px solid #70a155;
+  border-left: 50px solid transparent;
+  height: 0;
+  width: 80%;
+  position: absolute;
+  right: 0;
+  top: 350px
+
+}
+
+#wall {
+  width: 80%;
+  height: 70px;
+  background-color: #995a50;
+  position: absolute;
+  right: 0;
+  top: 280px;
+}
+
+#block1 {
+  width: 100px;
+  height: 70px;
+  background-color: #995a50;
+  position: absolute;
+  left: 170px;
+  top: 232px;
+  border-top: 3px solid #fff;
+}
+
+#block2 {
+  width: 100px;
+  height: 70px;
+  background-color: #995a50;
+  position: absolute;
+  left: 170px;
+  top: 159px;
+  border-top: 3px solid #fff;
+}
+
+/* Bus */
+
+#bus {
+  width: 410px;
+  height: 270px;
+  animation: bus 5s ease-in infinite;
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  z-index: 99;
+}
+
+#busTop {
+  width: 400px;
+  height: 80px;
+  background-color: $home-bus-color;
+  border-radius: 30px 30px 0 0;
+  border-bottom: 15px #3a3040 solid;
+}
+
+#busWindowsTop {
+  width: 307px;
+  height: 30px;
+  background-color: $home-bus-window-color;
+  border-radius: 20px 20px 0 0;
+  margin: 20px 0 0 35px;
+  position: absolute;
+  border-top: 10px inset $home-bus-window-sub-color;
+  border-left: 10px inset $home-bus-window-sub-color;
+}
+
+#busMiddle {
+  width: 354px;
+  height: 65px;
+  background-color: #b72636;
+}
+
+#busWindowsMiddle {
+  width: 310px;
+  height: 30px;
+  background-color: $home-bus-window-color;
+  margin: 25px 0 0 34px;
+  position: absolute;
+  border-top: 10px inset $home-bus-window-sub-color;
+  border-left: 10px inset $home-bus-window-sub-color;
+}
+
+.busWindowsShadow {
+  width: 10px;
+  height: 30px;
+  margin-left: 40px;
+  border-left: 14px inset $home-bus-window-sub-color;
+}
+
+.busWindowsShadow1 {
+  width: 10px;
+  height: 30px;
+  margin-left: 105px;
+  margin-top: -30px;
+  border-left: 14px inset $home-bus-window-sub-color;
+}
+
+.busWindowsShadow2 {
+  width: 10px;
+  height: 30px;
+  margin-left: 165px;
+  margin-top: -30px;
+  border-left: 14px inset $home-bus-window-sub-color;
+}
+
+.busWindowsShadow3 {
+  width: 10px;
+  height: 30px;
+  margin-left: 225px;
+  margin-top: -30px;
+  border-left: 14px inset $home-bus-window-sub-color;
+}
+
+.busWindowsShadow4 {
+  width: 10px;
+  height: 30px;
+  margin-left: 295px;
+  margin-top: -30px;
+  border-left: 14px inset $home-bus-window-sub-color;
+}
+
+#busBottom {
+  width: 354px;
+  height: 80px;
+  background-color: $home-bus-color;
+}
+
+#moterRum {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 54px solid $home-bus-color;
+  position: absolute;
+  margin-left: 354px;
+  margin-top: 65px
+}
+
+#moter {
+  width: 54px;
+  height: 70px;
+  background-color: $home-bus-color;
+  margin-left: 354px;
+  margin-top: 75px;
+  position: absolute;
+}
+
+#busWindowsBottom {
+  width: 40px;
+  height: 60px;
+  background-color: $home-bus-window-color;
+  margin: 0 0 0 34px;
+  position: absolute;
+  border-left: 10px inset #86A7C2;
+}
+
+#wheelLeft {
+  width: $wheel-size;
+  height: $wheel-size;
+  background-color: $home-bus-wheel-color;
+  border-radius: 50%;
+  border: 10px #3a3040 solid;
+  position: absolute;
+  margin: -30px 0 0 100px;
+}
+
+#wheelRight {
+  width: $wheel-size;
+  height: $wheel-size;
+  background-color: $home-bus-wheel-color;
+  border-radius: 50%;
+  border: 10px #3a3040 solid;
+  position: absolute;
+  margin: -30px 0 0 310px;
+}
+
+@keyframes bus {
+  from {
+    margin-left: -410px;
+  }
+  to {
+    margin-left: 100%;
+  }
+}
+
+/* Cloud */
+
+.cloud, .cloud_two, .cloud_three, .cloud_four {
+  animation: move 6s ease infinite;
+  @include border-radius(50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  background: #FFFFFF;
+  height: 60px;
+  width: 60px;
+  box-shadow: #FFFFFF 65px -15px 0 -5px,
+  #FFFFFF 25px -25px,
+  #FFFFFF 30px 10px,
+  #FFFFFF 60px 15px 0 -10px,
+  #FFFFFF 85px 5px 0 -5px;
+}
+
+.cloud_two {
+  top: 52%;
+  left: 31%;
+  animation-duration: 8s;
+}
+
+.cloud_three {
+  top: 12%;
+  left: 11%;
+  animation-duration: 8s;
+}
+
+.cloud_four {
+  top: 42%;
+  left: 71%;
+  animation-duration: 8s;
+}
+
+@keyframes move {
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+h1, .home-title {
+  color: $home-road-color;
+  z-index: 100;
+  font-family: SFUIText, sans-serif;
+  font-size: 65px;
+  margin-top: 5%;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
