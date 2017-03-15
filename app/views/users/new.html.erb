@@ -1,2 +1,14 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Sign up') %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, html: { class: "sign-up"}) do |f| %>
+        <%= render 'shared/error_messages' %>
+        <h1 class="sign-up-title">Sign up for your bus</h1>
+        <%= f.text_field :name, class: "sign-up-input", placeholder: :name %>
+        <%= f.email_field :email, class: "sign-up-input", placeholder: :email %>
+        <%= f.password_field :password, class: "sign-up-input", placeholder: :password %>
+        <%= f.password_field :password_confirmation, class: "sign-up-input", placeholder: :password_confirmation %>
+        <%= f.submit "Create my account", class: "sign-up-button" %>
+    <% end %>
+  </div>
+</div>

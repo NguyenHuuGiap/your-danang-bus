@@ -270,14 +270,15 @@
   }
 }
 
-h1, .home-title {
-  color: $home-road-color;
+.home-title {
+  color: $home-title;
   z-index: 100;
-  font-family: SFUIText, sans-serif;
-  font-size: 65px;
-  margin-top: 5%;
-  font-weight: 500;
+  margin-top: 20px;
+  float: left;
+  display: inline-block;
+  font-family: "Source Code Pro", Monaco, monospace;
+  font-size: 28px;
+  font-weight: 800;
   line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
+  letter-spacing: 10px;
 }

@@ -5,14 +5,54 @@
 
 body {
   background-color: $home-sky-color;
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+}
+
+header, .container {
+  width: 100%;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: transparent;
+}
+
+.navbar-nav > li > a {
+  &:hover, &:focus {
+    background-color: transparent;
+  }
+
+  .nav-item {
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px auto;
+    font-family: SFUIText, serif;
+    color: $home-road-color;
+  }
 }
 
 /** Navigation **/
 
 nav {
   min-height: 10px;
+  padding: 10px 20px;
+
+  ul, .nav, .navbar-nav {
+    width: 100%;
+
+    .dropdown-menu > li {
+      float: left;
+    }
+  }
+
+  ul, .dropdown-menu {
+    width: 120px;
+    min-width: 120px;
+  }
+
+  li, .dropdown {
+    float: right;
+  }
 
   .li-item {
     float: right;
@@ -22,11 +62,11 @@ nav {
 
   .nav-item {
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
     font-family: SFUIText, serif;
     text-decoration: none;
-    margin: 10px 30px;
+    margin: 10px;
 
     &:hover {
       color: whitesmoke;
