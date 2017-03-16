@@ -8,8 +8,8 @@ class UserTest < ActiveSupport::TestCase
   MIXED_CASE_EMAIL = 'Foo@ExAMPle.CoM'
 
   def setup
-    @user = User.new(name: 'topcbl', email: 'topcbl@gmail.com', password: "xxxx",
-                     password_confirmation: "xxxx")
+    @user = User.new(name: 'topcbl', email: 'topcbl@gmail.com', password: "123123123",
+                     password_confirmation: "123123123")
   end
 
   test "user which is created should be valid" do

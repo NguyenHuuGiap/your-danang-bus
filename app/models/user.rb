@@ -4,9 +4,16 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
 
   validates :name, presence: true, length: {maximum: 20}
-  validates :email, presence: true, length: {maximum: 50}, format: {with: VALID_EMAIL_REGEX},
-            uniqueness: { case_sensitive: false }
+  validates :email, presence: true, length: {maximum: 50},
+            format: {with: VALID_EMAIL_REGEX},
+            uniqueness: {case_sensitive: false}
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: {minimum: 6}
+
+  class << User
+    def get_current_user(session)
+      User.find_by id: session[:user_id]
+    end
+  end
 
 end

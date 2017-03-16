@@ -1,0 +1,15 @@
+$error-color: #f0776c;
+
+#error_explanation {
+  color: $error-color;
+  ul {
+    color: $error-color;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  .form-control {
+    color: $error-color;
+  }
+}
