@@ -5,7 +5,8 @@
 
 body {
   background-color: $home-sky-color;
-  height: auto;
+  overflow: hidden;
+  min-height: 100%;
 }
 
 header, .container {
@@ -29,6 +30,11 @@ header, .container {
     font-family: SFUIText, serif;
     color: $home-road-color;
   }
+}
+
+.dropdown-style {
+  font-size: 20px;
+  color: $home_road-color;
 }
 
 /** Navigation **/
@@ -62,7 +68,7 @@ nav {
 
   .nav-item {
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 300;
     font-family: SFUIText, serif;
     text-decoration: none;
