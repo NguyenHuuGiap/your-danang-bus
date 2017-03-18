@@ -4,6 +4,10 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'compass-rails', '~> 3.0', '>= 3.0.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

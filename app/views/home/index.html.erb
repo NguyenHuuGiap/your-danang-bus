@@ -1,4 +1,43 @@
 <% provide(:title, "Home") %>
+<% content_for :head do %>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCLAH2-kZr051VrKMhGFzRQ22QsPH_aooU&libraries=places"></script>
+    <script src="https://cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+<% end %>
+<%= link_to 'Danang Bus', root_path, class: 'home-title' %>
+<form class="home-center geo-form">
+  <span class="geo-input-wrapper geo-input-1">
+    <input id="geocomplete" class="gate geo-input" type="text" placeholder="Starting point" size="90" autocomplete="off"/>
+    <label for="geocomplete geo-input-1">Starting point</label>
+  </span>
+  <span class="geo-input-wrapper geo-input-2">
+    <input id="geocomplete2" class="gate geo-input" type="text" placeholder="Destination" size="90" autocomplete="off"/>
+    <label for="geocomplete2 geo-input-2">Destination</label>
+  </span>
+  <div id="find" class="geo-button">
+    <p>FIND YOUR BUS</p>
+  </div>
+  <svg class="home-location-svg" viewBox="200 175 400 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="boxMask">
+        <rect x="290" y="190" class="boxMask" width="220" height="220"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#boxMask)">
+      <path class="pin" fill-rule="evenodd" clip-rule="evenodd" d="M400,289c-11,0-20,9-20,20c0,15.4,17.6,42,18.3,43.1c0.4,0.6,1,0.9,1.7,0.9c0.7,0,1.3-0.3,1.7-0.9
+  c0.7-1.1,18.3-27.7,18.3-43.1C420,298,411,289,400,289z M400,301c-4.4,0-8,3.6-8,8s3.6,8,8,8c4.4,0,8-3.6,8-8S404.4,301,400,301z" fill="#FF5722"/>
+      <g class="track">
+        <line x1="220.5" y1="354.5" x2="820.5" y2="354.5" fill="none" stroke="#EEEEEE" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <circle cx="461" cy="354" r="5" fill="#EEEEEE"/>
+        <circle cx="701" cy="354" r="5" fill="#EEEEEE"/>
+        <circle class="boopX" cx="581" cy="354" r="5" fill="#FF5722"/>
+        <circle class="boop" cx="581" cy="354" r="1" fill="none" stroke-width="8" stroke="#FF5722"/>
+        <circle class="boop" cx="821" cy="354" r="5" fill="#FF5722"/>
+        <circle class="boop" cx="341" cy="354" r="5" fill="#FF5722"/>
+      </g>
+    </g>
+  </svg>
+</form>
 <div class='cloud'></div>
 <div class='cloud_two'></div>
 <div class='cloud_three'></div>

@@ -11,7 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.geocomplete
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap
+//= require underscore
+//= require gmaps/google
+//= require gsap/TweenMax
+//= require gsap/easing/CustomBounce
+//= require gsap/easing/CustomEase
+//= require_tree .
