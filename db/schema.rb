@@ -10,7 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317021406) do
+ActiveRecord::Schema.define(version: 20170319040411) do
+
+  create_table "access_tokens", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_access_tokens_on_user_id"
+  end
+
+  create_table "bus_stops", force: :cascade do |t|
+    t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bus_stops_routes", id: false, force: :cascade do |t|
+    t.integer "route_id",    null: false
+    t.integer "bus_stop_id", null: false
+  end
+
+  create_table "buses", force: :cascade do |t|
+    t.string   "number_plate"
+    t.integer  "routes_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["routes_id"], name: "index_buses_on_routes_id"
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string   "name"
+    t.time     "start_time"
+    t.time     "stop_time"
+    t.integer  "frequence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "user_locations", force: :cascade do |t|
     t.float    "latitude"

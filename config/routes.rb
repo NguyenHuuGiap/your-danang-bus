@@ -4,13 +4,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :new, :edit, :show, :update]
 
+  resources :buses, only: [:index, :show]
+
   get 'login', to: 'sessions#new'
 
   post 'login', to: 'sessions#create'
 
   delete 'logout', to: 'sessions#destroy'
-
-  get 'map', to: 'map#index'
 
   post 'user_location', to: 'user_location#create'
 

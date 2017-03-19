@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
 
-  has_one :user_location
+  has_one :user_location, dependent: :destroy
+
+  has_one :access_token, dependent: :destroy
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -46,6 +48,7 @@ class User < ApplicationRecord
     end
 
     def get_current_user(arg)
+
       if arg && (arg.is_a? ActionDispatch::Request::Session) && arg[:user_id]
         return User.find(arg[:user_id])
       elsif arg && (arg.is_a? Integer)
