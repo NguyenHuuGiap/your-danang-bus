@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  api:
+    access_token:
+      create:
+        invalid_email_password: "Invalid email/password, please try again"
+    users:
+      register:
+        register_fail: "Register fail"

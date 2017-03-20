@@ -53,11 +53,6 @@ $(document).ready(function () {
   }
 
   $('#find-your-bus').on("click", function () {
-    var params = {
-      "starting-point": $('#geocomplete').attr("data-location"),
-      "destination": $('#geocomplete2').attr("data-location")
-    };
-    $("#geo-form-id").append($)
     $("#geo-form-id").submit();
   });
 });
