@@ -5,16 +5,16 @@
 
 <% end %>
 <%= link_to 'Danang Bus', root_path, class: 'home-title' %>
-<form class="home-center geo-form">
+<form id="geo-form-id" class="home-center geo-form">
   <span class="geo-input-wrapper geo-input-1">
-    <input id="geocomplete" class="gate geo-input" type="text" placeholder="Starting point" size="90" autocomplete="off"/>
+    <input id="geocomplete" class="gate geo-input" type="text" placeholder="Starting point" size="90" autocomplete="on"/>
     <label for="geocomplete geo-input-1">Starting point</label>
   </span>
   <span class="geo-input-wrapper geo-input-2">
-    <input id="geocomplete2" class="gate geo-input" type="text" placeholder="Destination" size="90" autocomplete="off"/>
+    <input id="geocomplete2" class="gate geo-input" type="text" placeholder="Destination" size="90" autocomplete="on"/>
     <label for="geocomplete2 geo-input-2">Destination</label>
   </span>
-  <div id="find" class="geo-button">
+  <div id="find-your-bus" class="geo-button">
     <p>FIND YOUR BUS</p>
   </div>
   <svg class="home-location-svg" viewBox="200 175 400 300" xmlns="http://www.w3.org/2000/svg">

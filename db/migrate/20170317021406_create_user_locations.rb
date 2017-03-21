@@ -7,5 +7,7 @@ class CreateUserLocations < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_index :user_locations, :user_id
   end
 end

@@ -11,6 +11,6 @@ class UserLocationController < ApplicationController
   private
 
   def location_params
-    params.require(:location_params).permit(:latitude, :longitude)
+    params.require(:user_location).permit(:latitude, :longitude)
   end
 end
