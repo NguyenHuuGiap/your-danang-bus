@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319040411) do
+ActiveRecord::Schema.define(version: 20170321013951) do
 
   create_table "access_tokens", force: :cascade do |t|
     t.string   "token"
@@ -35,16 +35,16 @@ ActiveRecord::Schema.define(version: 20170319040411) do
 
   create_table "buses", force: :cascade do |t|
     t.string   "number_plate"
-    t.integer  "routes_id"
+    t.integer  "route_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["routes_id"], name: "index_buses_on_routes_id"
+    t.index ["route_id"], name: "index_buses_on_route_id"
   end
 
   create_table "routes", force: :cascade do |t|
     t.string   "name"
-    t.time     "start_time"
-    t.time     "stop_time"
+    t.integer  "start_time"
+    t.integer  "stop_time"
     t.integer  "frequence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170319040411) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_locations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

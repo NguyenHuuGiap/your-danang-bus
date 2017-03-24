@@ -5,7 +5,7 @@
 
 <% end %>
 <%= link_to 'Danang Bus', root_path, class: 'home-title' %>
-<form id="geo-form-id" class="home-center geo-form">
+<form id="geo-form-id" class="home-center geo-form" action="/map" method="GET" >
   <span class="geo-input-wrapper geo-input-1">
     <input id="geocomplete" class="gate geo-input" type="text" placeholder="Starting point" size="90" autocomplete="on"/>
     <label for="geocomplete geo-input-1">Starting point</label>

@@ -48,11 +48,14 @@ class User < ApplicationRecord
     end
 
     def get_current_user(arg)
-
-      if arg && (arg.is_a? ActionDispatch::Request::Session) && arg[:user_id]
-        return User.find(arg[:user_id])
-      elsif arg && (arg.is_a? Integer)
-        return User.find(arg)
+      begin
+        if arg && (arg.is_a? ActionDispatch::Request::Session) && arg[:user_id]
+          return User.find(arg[:user_id])
+        elsif arg && (arg.is_a? Integer)
+          return User.find(arg)
+        end
+      rescue ActiveRecord::RecordNotFound => _
+        nil
       end
       nil
     end
