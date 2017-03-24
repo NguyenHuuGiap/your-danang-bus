@@ -16,12 +16,14 @@ Rails.application.routes.draw do
 
   namespace :api do
     post 'login', to: 'access_token#create'
+
     resources :users do
-      member do
+      collection do
         post :register
-        post :update_profile
+        patch :update_profile
       end
     end
+
     resources :buses, only: [:index, :show]
   end
 
