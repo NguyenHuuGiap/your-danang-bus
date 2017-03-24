@@ -21,9 +21,13 @@
 
 en:
   api:
+    unauth: "Unauthenticated!"
     access_token:
       create:
         invalid_email_password: "Invalid email/password, please try again"
     users:
       register:
         register_fail: "Register fail"
+    buses:
+      index:
+        bus_not_found: "Found no bus"
