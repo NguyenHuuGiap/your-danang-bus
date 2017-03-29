@@ -3,20 +3,28 @@
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyCLAH2-kZr051VrKMhGFzRQ22QsPH_aooU&libraries=places"></script>
     <script src="https://cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <% end %>
-<form class="map-form">
-  <form id="geo-form-id" class="home-center geo-form" action="/map" method="GET">
-    <span class="geo-input-wrapper geo-input-1">
-      <%= text_field_tag 'starting_point'  %>
-      <input id="geocomplete" class="gate geo-input" type="text" placeholder="Starting point" size="90" autocomplete="on"/>
-      <label for="geocomplete geo-input-1">Starting point</label>
-    </span>
-      <span class="geo-input-wrapper geo-input-2">
-      <input id="geocomplete2" class="gate geo-input" type="text" placeholder="Destination" size="90" autocomplete="on"/>
-      <label for="geocomplete2 geo-input-2">Destination</label>
-    </span>
-    <input id="find" type="button" value="find"/>
-  </form>
+<!--<form class="map-form">-->
+  <!--<form id="geo-form-id" class="home-center geo-form" action="/map" method="GET">-->
+    <!--<span class="geo-input-wrapper geo-input-1">-->
+      <!--<%= text_field_tag 'starting_point'  %>-->
+      <!--<input id="geocomplete" class="gate geo-input" type="text" placeholder="Starting point" size="90" autocomplete="on"/>-->
+      <!--<label for="geocomplete geo-input-1">Starting point</label>-->
+    <!--</span>-->
+      <!--<span class="geo-input-wrapper geo-input-2">-->
+      <!--<input id="geocomplete2" class="gate geo-input" type="text" placeholder="Destination" size="90" autocomplete="on"/>-->
+      <!--<label for="geocomplete2 geo-input-2">Destination</label>-->
+    <!--</span>-->
+    <!--<input id="find" type="button" value="find"/>-->
+  <!--</form>-->
 
-</form>
-<div id="map" class="map">
+<!--</form>-->
+<!--<div id="map" class="map">-->
+<!--</div>-->
+
+
+<div style="margin-top:200px" ng-app="docsTemplateUrlDirective" ng-controller="Controller">
+  <my-customer></my-customer>
+  <!--<a href="angular/templates/routeList.html">-->
+    <!--<%= image_tag("1.jpg", alt: "") %>-->
+    <!--</a>-->
 </div>
