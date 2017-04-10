@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'angularjs-rails', '~> 1.6', '>= 1.6.2'
 gem 'geocoder'
 gem 'gmaps4rails'
