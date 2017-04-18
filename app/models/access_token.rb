@@ -8,7 +8,7 @@ class AccessToken < ApplicationRecord
     def create_or_refresh_token!(user)
       access_token = user.access_token || user.build_access_token
       begin
-        access_token.assign_attributes(token: User.new_token)
+        access_token.assign_attributes(token: generate(user.email))
         access_token.save!
       rescue Errors::TokenGenerationException
         retry
@@ -17,7 +17,7 @@ class AccessToken < ApplicationRecord
     end
 
     def generate(options = {})
-      SecureRandom.hex(16) || options.hash
+      SecureRandom.hex(60) << Digest::MD5.hexdigest(options.hash.to_s)[0, 4]
     end
 
   end

@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321013951) do
+ActiveRecord::Schema.define(version: 20170329081707) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "access_tokens", force: :cascade do |t|
     t.string   "token"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_access_tokens_on_user_id"
+    t.index ["user_id"], name: "index_access_tokens_on_user_id", using: :btree
   end
 
   create_table "bus_stops", force: :cascade do |t|
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170321013951) do
     t.integer  "route_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["route_id"], name: "index_buses_on_route_id"
+    t.index ["route_id"], name: "index_buses_on_route_id", using: :btree
   end
 
   create_table "routes", force: :cascade do |t|
@@ -56,16 +59,20 @@ ActiveRecord::Schema.define(version: 20170321013951) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_locations_on_user_id"
+    t.index ["user_id"], name: "index_user_locations_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "remember_digest"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end
