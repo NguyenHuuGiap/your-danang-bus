@@ -18,10 +18,10 @@ services:
       context: ../
       dockerfile: ./docker/Dockerfile
     volumes:
-      - .:/your-danang-bus
+      - ../:/your-danang-bus
       - ./scripts:/scripts
     ports:
-      - "3000:3000"
+      - "3030:8080"
     command: /scripts/start_rails.sh
 
 volumes:

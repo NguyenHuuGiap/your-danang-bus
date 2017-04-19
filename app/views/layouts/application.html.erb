@@ -6,12 +6,17 @@
   <%= yield(:head) %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= yield(:specific_css) %>
 </head>
 <body>
-<%= render 'layouts/header' %>
-<div class="container">
-  <%= yield %>
-  <%= render 'layouts/footer' %>
-</div>
+  <%= render 'layouts/header' %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div class="container">
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
+
+  <%= yield :specific_js %>
 </body>
-</html>
+</html>`

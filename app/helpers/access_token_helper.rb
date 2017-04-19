@@ -10,7 +10,7 @@ module AccessTokenHelper
     @current_user = token.user unless token.nil?
   end
 
-  def current_user
+  def current_user_data
     @current_user ||= verify_access_token
   end
 

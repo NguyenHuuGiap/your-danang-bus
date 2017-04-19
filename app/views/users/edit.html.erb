@@ -5,13 +5,21 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @user, url: user_path(@user.id), html: {multipart: true, class: 'sign-up'} do |f| %>
         <%= render 'shared/error_messages' %>
-        <%= image_tag @user.avatar.url %>
-        <%= f.file_field :avatar %>
+        <%= image_tag @user.avatar.url, class: 'avatar', alt: 'your avatar image' %>
+        <%= f.file_field :avatar, onchange: 'changeAvatarFileEvent(this)' %>
         <%= f.text_field :name, class: 'sign-up-input', placeholder: :name %>
         <input disabled class="sign-up-input" value="<%= @user.email %>">
         <%= f.password_field :password, class: 'sign-up-input', placeholder: :password %>
         <%= f.password_field :password_confirmation, class: 'sign-up-input', placeholder: :password_confirmation %>
-        <%= f.submit 'Create my account', class: 'sign-up-button' %>
+        <%= f.submit 'Update my profile', class: 'sign-up-button' %>
     <% end %>
   </div>
 </div>
+
+<%= content_for :specific_js do %>
+  <%= javascript_include_tag 'users/edit.js' %>
+<% end %>
+
+<%= content_for :specific_css do %>
+    <%= stylesheet_link_tag 'users/edit', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>

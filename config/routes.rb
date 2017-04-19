@@ -2,15 +2,20 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :users, only: [:create, :new, :edit, :show, :update]
+  devise_for :users, controllers: {
+      omniauth_callbacks: 'omniauth_callbacks',
+      registrations: 'users',
+      sessions: 'sessions'
+  }, path_names: {
+      sign_in: 'login', sign_out: 'log_out'
+  }
+
+  devise_scope :user do
+    delete 'logout', to: 'devise/sessions#destroy'
+    get 'login', to: 'sessions#new'
+  end
 
   get 'map', to: 'map#index'
-
-  get 'login', to: 'sessions#new'
-
-  post 'login', to: 'sessions#create'
-
-  delete 'logout', to: 'sessions#destroy'
 
   post 'user_location', to: 'user_location#create'
 

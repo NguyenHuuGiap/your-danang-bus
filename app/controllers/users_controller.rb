@@ -1,15 +1,8 @@
-class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
+class UsersController < Devise::RegistrationsController
+  before_action :user_register_params, if: :devise_controller?
 
   def create
-    @user = User.new(user_register_params)
-    if @user.save
-      log_in @user
-      redirect_to root_path
-    else
-      render 'new'
+    super do
     end
   end
 
@@ -33,8 +26,7 @@ class UsersController < ApplicationController
   private
 
   def user_register_params
-    params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation, :avatar)
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
   def user_edit_params

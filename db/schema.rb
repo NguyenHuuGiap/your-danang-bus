@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20170329081707) do
 
   create_table "access_tokens", force: :cascade do |t|
     t.string   "token"
-    t.integer  "user_id"
+    t.integer  "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_access_tokens_on_user_id", using: :btree
+    t.index ["users_id"], name: "index_access_tokens_on_users_id", using: :btree
   end
 
   create_table "bus_stops", force: :cascade do |t|
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20170329081707) do
 
   create_table "buses", force: :cascade do |t|
     t.string   "number_plate"
-    t.integer  "route_id"
+    t.integer  "routes_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["route_id"], name: "index_buses_on_route_id", using: :btree
+    t.index ["routes_id"], name: "index_buses_on_routes_id", using: :btree
   end
 
   create_table "routes", force: :cascade do |t|
@@ -64,15 +64,26 @@ ActiveRecord::Schema.define(version: 20170329081707) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "remember_digest"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "access_tokens", "users", column: "users_id"
+  add_foreign_key "buses", "routes", column: "routes_id"
 end

@@ -3,7 +3,7 @@
 <div class="row">
 
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, html: { class: "sign-up"}) do |f| %>
+    <%= form_for(resource, as: resource_name,  url: registration_path(resource_name), html: { class: "sign-up"}) do |f| %>
         <%= render 'shared/error_messages' %>
         <h1 class="sign-up-title">Sign up for your bus</h1>
         <%= f.text_field :name, class: "sign-up-input", placeholder: :name %>
@@ -14,3 +14,5 @@
     <% end %>
   </div>
 </div>
+
+<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>

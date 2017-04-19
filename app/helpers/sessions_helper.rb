@@ -15,11 +15,6 @@ module SessionsHelper
     @current_user = nil
   end
 
-  def current_user
-    check_remember?
-    @current_user ||= User.get_current_user(session)
-  end
-
   def check_remember?
     if session[:user_id].nil?
       user = User.get_current_user(cookies.signed[:user_id])
